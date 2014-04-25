@@ -1,0 +1,32 @@
+{
+    "name": "grunt-spawn-pipe",
+    "version": "0.1.0",
+    "description": "Grunt plugin for running and piping commands using spawn()",
+    "main": "./index.js",
+    "scripts": {
+    },
+    "keywords": [
+        "gruntplugin",
+        "spawn",
+        "pipe",
+        "command"
+    ],
+    "author": {
+        "name": "Pavel Lobodinský",
+        "email": "pavel.lobo@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lobodpav/grunt-spawn-pipe.git"
+    },
+    "bugs": {
+        "url": "https://github.com/lobodpav/grunt-spawn-pipe/issues?state=open"
+    },
+    "readmeFilename": "README.md",
+    "license": "MIT",
+    "devDependencies": {
+    },
+    "peerDependencies": {
+        "grunt": "~0.4.4"
+    }
+}
