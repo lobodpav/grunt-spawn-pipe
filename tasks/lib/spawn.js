@@ -138,6 +138,10 @@ function spawnAndPipe(commands, options, callback) {
     // last command in the piped chain will write its output into stdout of the current process
     pipe(currentCommand.cmd, currentChild, process.stdout, process.stderr);
 
+    // allow user inout from terminal to be received by the first child
+    // needed in case the first child is asking user for approval, for example when running `rm -i /var/log/messages.log`
+    process.stdin.pipe(firstChild.stdin);
+
     // watch for completion
     currentChild.on('close', function (exitCode) {
         // kill the first child to ensure long running process will be terminated;
