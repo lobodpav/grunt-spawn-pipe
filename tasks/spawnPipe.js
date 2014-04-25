@@ -14,10 +14,8 @@ module.exports = function(grunt) {
         var done = this.async();
 
         var commands = this.data.commands;
-        if (!Array.isArray(commands)) {
-            grunt.log.error('Missing or invalid list of commands in your Gruntfile configuration');
-            return done(false);
-        }
+        if (!Array.isArray(commands))
+            throw new Error('Missing or invalid list of commands in your Gruntfile configuration');
 
         spawn(commands, options, function(exitCode) {
             return done(exitCode === 0);

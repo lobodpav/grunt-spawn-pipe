@@ -34,21 +34,29 @@ grunt.loadNpmTasks('grunt-spawn-pipe');
 
 Run this task with the `grunt spawnPipe` command.
 
+### Options
+
+The options you set are passed over to every call to Node's `spawn()` function.
+Read [Node doc](http://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options) for more details on which options you can set.
+
 ### Usage example
 
 ```js
 module.exports = function(grunt) {
     grunt.initConfig({
         spawnPipe: {
-            startDev: {
+            ls: {
+                options: {
+                    cwd: '/'
+                },
                 commands: [
-                    {cmd: 'node', args: ['src/index.js']},
-                    {cmd: 'bunyan'}
+                    {cmd: 'ls',   args: ['-la']},
+                    {cmd: 'grep', args: ['etc']}
                 ]
             },
-            startProd: {
+            startDev: {
                 commands: [
-                    {cmd: 'node', args: ['src/index.js']},
+                    {cmd: 'node',   args: ['src/index.js']},
                     {cmd: 'bunyan', args: ['-o', 'short', '--color']}
                 ]
             }
@@ -59,7 +67,7 @@ module.exports = function(grunt) {
 }
 ```
 
-`args` property is optional while the rest is mandatory.
+`options` and `args` properties are optional. The rest is mandatory.
 
 # Technical details
 
