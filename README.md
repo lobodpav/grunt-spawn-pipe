@@ -1,6 +1,6 @@
 # grunt-spawn-pipe
 
-Execute your long-running app and pipe its output somewhere else.
+> Execute your long-running app and pipe its output somewhere else.
 
 # Intro
 
@@ -8,6 +8,7 @@ You have a long running app and you want its output to be processed by another u
 For example, if your Node.js app uses Bunyan for logging, you surely want the output to be pretty-printed. I.e. to pipe the output of your app to Bunyan.
 
 Existing Grunt plugins use two approaches:
+
 1. Using `child_process.exec()` allows to easily pipe commands but will terminate your app once its buffer gets full. Not a solution for long running apps.
 2. Using `child_process.spawn()` fixes the buffer issue but does not allow easy piping.
 
@@ -29,23 +30,23 @@ Once the plugin is installed, enable it inside your Gruntfile:
 grunt.loadNpmTasks('grunt-spawn-pipe');
 ```
 
-# spawn-pipe task
+# spawnPipe task
 
-Run this task with the `grunt spawn-pipe` command.
+Run this task with the `grunt spawnPipe` command.
 
-## Usage example
+### Usage example
 
 ```js
 module.exports = function(grunt) {
     grunt.initConfig({
-        spawn-pipe: {
-            dev: {
+        spawnPipe: {
+            startDev: {
                 commands: [
                     {cmd: 'node', args: ['src/index.js']},
                     {cmd: 'bunyan'}
                 ]
             },
-            prod: {
+            startProd: {
                 commands: [
                     {cmd: 'node', args: ['src/index.js']},
                     {cmd: 'bunyan', args: ['-o', 'short', '--color']}
@@ -62,17 +63,17 @@ module.exports = function(grunt) {
 
 # Technical details
 
-## Output piping
+### Output piping
 
 * The plugin pipes `stdout` of the first command to `stdin` of the second command and so on.
 * All `stderr`s are piped to `stderr` of the process executing the spawn commands.
 * `stdout` of the last command is piped to `stdout` of the process executing the spawn commands.
 
-## Error handling
+### Error handling
 
 If an error occurs in any of the command for example because of a typo in command name, the first command is killed to ensure the whole piped chain gets terminated.
 
-## Environment
+### Environment
 
 `process.swd` and `process.env` are used by the `spawn()` calls.
 
