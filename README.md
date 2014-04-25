@@ -83,19 +83,4 @@ If an error occurs in any of the command for example because of a typo in comman
 
 ### Environment
 
-`process.swd` and `process.env` are used by the `spawn()` calls.
-
-Current Working Directory
-
-# Dependencies
-
-The tool does not depend on any other code apart from Grunt. For developers of this tool, `Mocha` and `Should` are the only dependencies for running unit tests.
-
-# Development
-
-In order to develop this plugin, these steps are required:
-
-* Clone the git repo by running `git clone URL`
-* Go to the newly created directory in Terminal
-* Run `npm install` to download dependencies
-* Run unit tests by `npm test`
+`process.cwd` and `process.env` are used as defaults for all `spawn()` calls. You can override these values in task `options`.
