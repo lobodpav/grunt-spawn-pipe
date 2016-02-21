@@ -3,8 +3,7 @@
     "version": "0.1.0",
     "description": "Grunt plugin for running and piping commands using spawn()",
     "main": "./index.js",
-    "scripts": {
-    },
+    "scripts": {},
     "keywords": [
         "gruntplugin"
     ],
@@ -21,9 +20,8 @@
     },
     "readmeFilename": "README.md",
     "license": "MIT",
-    "devDependencies": {
-    },
+    "devDependencies": {},
     "peerDependencies": {
-        "grunt": "~0.4.0"
+        "grunt": ">=0.4.0"
     }
 }
