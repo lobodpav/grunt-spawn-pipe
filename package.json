@@ -1,6 +1,6 @@
 {
     "name": "grunt-spawn-pipe",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Grunt plugin for running and piping commands using spawn()",
     "main": "./index.js",
     "scripts": {
@@ -24,6 +24,6 @@
     "devDependencies": {
     },
     "peerDependencies": {
-        "grunt": "~0.4.0"
+        "grunt": "~1.0.1"
     }
 }

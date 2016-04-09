@@ -5,7 +5,7 @@
 # Intro
 
 You have a long running app and you want its output to be processed by another utility.
-For example, if your Node.js app uses Bunyan for logging, you surely want the output to be pretty-printed. I.e. to pipe the output of your app to Bunyan.
+For example, your Node.js app uses Bunyan for logging, you want the output to be pretty-printed. I.e. to pipe the output of your app to Bunyan.
 
 Existing Grunt plugins use two approaches:
 
@@ -16,7 +16,7 @@ This plugin is here to allow you to spawn processes and pipe them together.
 
 # Getting Started
 
-This plugin requires Grunt `~0.4.0` and was tested on OS X operating system.
+This plugin requires Grunt `~1.0.1` and was tested on OS X operating system.
 
 Install the plugin:
 
@@ -37,7 +37,7 @@ Run this task with the `grunt spawnPipe` command.
 ### Options
 
 The options you set are passed over to every call to Node's `spawn()` function.
-Read [Node doc](http://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options) for more details on which options you can set.
+Read [Node doc](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options) for more details on which options you can set.
 
 ### Usage example
 
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
 ### Error handling
 
-If an error occurs in any of the command for example because of a typo in command name, the first command is killed to ensure the whole piped chain gets terminated.
+If an error occurs in any of the command, for example because of a typo in command name, the first command is killed to ensure the whole piped chain gets terminated.
 
 ### Environment
 
