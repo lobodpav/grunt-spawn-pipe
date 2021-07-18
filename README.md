@@ -1,3 +1,7 @@
+# ! CAUTION !
+
+This module is **not maintained anymore**.
+
 # grunt-spawn-pipe
 
 > Execute your long-running app and pipe its output somewhere else.
